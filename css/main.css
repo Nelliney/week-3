@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #DDC599;
+  font-family: 'Lato', sans-serif;
+}
+
+header,
+footer {
+  background: #0D1217;
+  color: blanchedalmond;
+  padding: 2rem;
+}
+
+footer {
+  background: #343940;
+}
+
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+.intro {
+  padding: 2rem;
+}
+
+aside {
+  background-color: #EADDBD;
+  padding: 1rem;
+}
+
+.projects,
+.labs {
+  background-color: #0D1217;
+  padding: 1rem 2rem;
+  color: blanchedalmond;
+}
+
+
+.labs h2 {
+  padding-right: 0.3rem;
+}
+
+.projects ol {
+  height: 90%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.labs ol {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+}
+
+.projects li,
+.labs li {
+  background-image: url("../images/1.jpg");
+  border-radius: 2%;
+  background-color: black;
+  background-position: center;
+  background-size: cover;
+  padding: 10px;
+  height: 10rem;
+  text-decoration: none;
+}
+
+.projects li {
+  /* flex-grow | flex-shrink | flex-basis */
+  flex: 1 1 5rem;
+}
+
+ a {
+  color: black;
+  text-decoration: none;
+}
+
+h3 a {
+  color: blanchedalmond;
+  text-decoration-line: underline;
+}
+
+/* ----------------animation-------------------------------------------------------- */
+
+header,
+footer,
+aside {
+  animation-name: appearance0;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+.wrapper {
+  animation-name: appearance1;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+.intro {
+  animation-name: appearance2;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+.wrapper div {
+  animation-name: appearance3;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-delay: 3s;
+  animation-fill-mode: forwards;  
+}
+
+@keyframes appearance0 {
+
+  0%,
+  50% {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes appearance1 {
+  0%, 100%{
+    pointer-events: none;
+  }
+  0%,
+  50% {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes appearance2 {
+
+  0%,
+  50% {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes appearance3 {
+  0%{
+    pointer-events: none;
+  }
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  20% {
+    transform: scale(0.95);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+  99.99%{
+    pointer-events: none;
+  }
+  100% {
+    pointer-events: auto;
+  }
+}
+
+/* ----------------transition-------------------------------------------------------- */
+
+.projects li,
+.labs li {
+  width: 210px;
+  height: 140px;
+  background-color: black;
+  opacity: 1;
+  background-size: 110%;
+  transition: all 1s linear;
+}
+
+.projects li:hover,
+.labs li:hover {
+  background-size: 130%;
+  filter: brightness(80%);
+}
+
+
+.wrapper section {
+  transition: all .5s ease-out;
+}
+
+.wrapper section:hover {
+  filter: drop-shadow(50px 50px 50px black)
+}
+
+/* ----------------@media-------------------------------------------------------- */
+
+@media screen and (min-width: 600px) {
+
+  body {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+  }
+
+  header,
+  footer {
+    grid-column: 1 / 4;
+  }
+
+  .intro {
+    column-count: 3;
+  }
+
+  .wrapper div {
+    background-color: #E6DAC2;
+    padding: 1rem;
+  }
+
+  .projects,
+  .labs {
+    background-color: #FFFFEF;
+    color: black;
+    /* -- display: block;--- */
+  }
+
+  .labs ol {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .projects ol,
+  .labs ol {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .projects li,
+  .labs li {
+    width: 230px;
+    height: 160px;
+  }
+
+  h3 a {
+    color: black;
+  }
+
+}
